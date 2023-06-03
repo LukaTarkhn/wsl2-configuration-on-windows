@@ -73,6 +73,7 @@
           sudo apt install apache2
           sudo ufw app list
           sudo ufw allow 'Apache'
+          sudo service apache2 start
           sudo service apache2 status
           
     - Setting up Virtual Hosts:
