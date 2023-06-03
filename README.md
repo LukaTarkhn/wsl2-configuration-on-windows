@@ -143,5 +143,16 @@
                 #localhostForwarding=true
 
 
+
+
+# Uninstall Windows Subsystem for Linux (WSL) Distro in Windows 11
+
+Uninstall Ubuntu app and run this commands in shell:
+
+            wsl --list
+            wsl --unregister ubuntu
+            
+  
+
        
 
