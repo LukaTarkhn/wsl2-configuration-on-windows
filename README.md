@@ -170,8 +170,15 @@
                 processors = 4 # Makes the WSL 2 VM use two virtual procesors
                 #localhostForwarding=true
 
+# Own command in bash for fast start apache2,mysql and redis-server
+In console: `nano ~/.bashrc`
 
+and then add this lines:
 
+            #Add an "serve_serv" alias for apache2, redis-server and mysql start commands
+            alias serve='sudo service apache2 start; sudo service mysql start;sudo service redis-server start'
+            
+after that, we can just use command `serve`;
 
 # Uninstall Windows Subsystem for Linux (WSL) Distro in Windows 11
 
