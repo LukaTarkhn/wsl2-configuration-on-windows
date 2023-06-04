@@ -64,7 +64,8 @@
           sudo /etc/init.d/mysql start
           
     - Start the security script prompts: 
-    
+          ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'SetRootPasswordHere';
+          exit;
           sudo mysql_secure_installation
     
       - To open the MySQL prompt, enter: **sudo mysql**
@@ -74,8 +75,19 @@
       - To create a new database, enter: **CREATE DATABASE database_name;**
       
       - To delete a database, enter: **DROP DATABASE database_name;**
+
+7. Install **redis-server**
+
+    Install redis latest stable version
     
-7. [install **Apache2** and **Setting Up Virtual Hosts**](https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-22-04)
+       sudo add-apt-repository -y ppa:chris-lea/redis-server
+       sudo apt install -y redis-server
+            
+    Start redis-server:
+    
+       sudo service redis-server start
+    
+8. [install **Apache2** and **Setting Up Virtual Hosts**](https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-22-04)
     - Install Apache2:
     
           sudo apt update
@@ -133,7 +145,7 @@
           
        Now we should add our domain in WSL hosts file:
        
-            sudo nano /etc/hosts
+          sudo nano /etc/hosts
        
        and add this line:
        
