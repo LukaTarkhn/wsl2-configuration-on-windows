@@ -16,14 +16,23 @@
         
 3. Install **PHP** and **add-ons**
 
-   It's important to install **php8.1-dev** if you want to compile any add-ons later.
+   It's important to install **php8.1** if you want to compile any add-ons later.
 
+        sudo apt update
+        sudo apt upgrade
+        sudo apt install software-properties-common
         sudo add-apt-repository -y ppa:ondrej/php
+        sudo apt update
+        sudo apt install php8.1
         sudo apt update && sudo apt install -y php8.1-bz2 php8.1-cgi php8.1-cli php8.1-common php8.1-curl php8.1-dev php8.1-enchant php8.1-fpm php8.1-gd php8.1-gmp php8.1-imap php8.1-intl php8.1-ldap php8.1-mysql php8.1-odbc php8.1-opcache php8.1-pgsql php8.1-phpdbg php8.1-pspell php8.1-readline php8.1-sybase php8.1-tidy php8.1-xmlrpc php8.1-xsl php8.1-sqlite3 php8.1-mbstring php8.1-bcmath php8.1-soap php8.1-zip php8.1-xdebug php8.1-redis php8.1-igbinary php8.1-imagick
 
    If you are looking for more PHP modules try:
 
         sudo apt-cache search php8.1-
+        
+    configure **php.ini** file:
+    
+        sudo nano /etc/php/8.1/apache2/php.ini    
         
 4. Install **Composer**
 
@@ -104,7 +113,13 @@
               ServerAdmin webmaster@localhost
               ServerName your_domain
               ServerAlias www.your_domain
-              DocumentRoot /var/www/your_domain
+              DocumentRoot /var/www/your_domain/public
+              
+              <Directory /var/www/your_domain>
+                  AllowOverride All
+              </Directory>
+
+              
               ErrorLog ${APACHE_LOG_DIR}/error.log
               CustomLog ${APACHE_LOG_DIR}/access.log combined
           </VirtualHost>
