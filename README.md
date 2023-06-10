@@ -104,6 +104,11 @@
           sudo chmod -R 755 /var/www/your_domain
           sudo nano /var/www/your_domain/index.html
           
+      if laravel project:
+      
+          sudo chown -R www-data:www-data storage bootstrap/cache
+          sudo chmod -R 775 storage bootstrap/cache
+          
       Insert example HTML code:
       
           <html>
