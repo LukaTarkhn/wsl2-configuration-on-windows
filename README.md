@@ -64,6 +64,8 @@
           sudo /etc/init.d/mysql start
           
     - Start the security script prompts: 
+
+          sudo mysql;
           ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'SetRootPasswordHere';
           exit;
           sudo mysql_secure_installation
